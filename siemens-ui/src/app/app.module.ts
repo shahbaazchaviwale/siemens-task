@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { RoughComponentComponent } from './rough-component/rough-component.component';
+import { MaterialModule } from 'src/material.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RoughComponentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

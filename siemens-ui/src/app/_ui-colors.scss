@@ -1,0 +1,9 @@
+$app-colour:(  
+    lightGrey: #F5F7FA,
+    header :#5C6AC9,
+
+);
+
+@function color($colour-name){
+    @return map-get($app-colour, $colour-name)
+}
