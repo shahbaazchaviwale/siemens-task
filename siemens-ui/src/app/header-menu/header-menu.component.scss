@@ -1,0 +1,17 @@
+@import '../ui-colors';
+.header-menu{
+    ul{
+        list-style-type: none;
+        padding: 0px;
+        color:color(white);
+        li{
+            display: inline;
+            padding: 8px 24px 8px 24px;
+        }
+    }
+
+    .active{
+        background: #7281e6;
+        border-radius: 25px;
+    }
+}

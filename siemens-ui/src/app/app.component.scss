@@ -1,28 +1,41 @@
 @import './ui-colors';
 .container{
     .center{
-        position: absolute;
-        top: 0px;
-        width: 100%;
+        position: relative;
+        margin: 0 auto;
+        width: 70%;
+        height: 100vh;
+        // border: 1px solid red;
+        z-index: 1;
     }
     .layer-1{
         width: 100%;
         height: 35vh;
         background: color(header);
+        position: absolute;
+        top: 0px;
+
     }
     .layer-2{
         width: 100%;
         height: 35vh;
-        background: color(lightGrey);
+        position: relative;
+        top: 38px;
     }
     .layer-3{
         width: 100%;
         height: 60vh;
-    }
-    .center-app{
-        // background: lightblue;
-        height: 100vh;
-        border: 1px solid red;
+        background: color(white);
+        position: relative;
+        top: 38px;
 
     }
+    .layer-4{
+        width: 100%;
+        height: 60vh;
+        position: relative;
+        top: 38px;
+
+    }
+
 }
