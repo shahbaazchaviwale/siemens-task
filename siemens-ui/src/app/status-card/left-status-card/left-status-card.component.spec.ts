@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RoughComponentComponent } from './rough-component.component';
+import { LeftStatusCardComponent } from './left-status-card.component';
 
-describe('RoughComponentComponent', () => {
-  let component: RoughComponentComponent;
-  let fixture: ComponentFixture<RoughComponentComponent>;
+describe('LeftStatusCardComponent', () => {
+  let component: LeftStatusCardComponent;
+  let fixture: ComponentFixture<LeftStatusCardComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RoughComponentComponent ]
+      declarations: [ LeftStatusCardComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RoughComponentComponent);
+    fixture = TestBed.createComponent(LeftStatusCardComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

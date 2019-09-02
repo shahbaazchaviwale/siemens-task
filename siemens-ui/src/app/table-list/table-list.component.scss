@@ -1,0 +1,90 @@
+@import '../ui-colors';
+
+.table-container{
+    background: color(white);
+    padding: 24px 0px 24px 0px;
+    .table-title{
+        padding: 0px 0px 24px 30px;
+        font-size: 18px;
+    }
+    table {
+        thead{
+            th{
+                padding: 12px;
+                color: color(card-title);
+                letter-spacing: 1px;
+                font-weight: 100;
+                line-height: 16px;
+                .sort-icon{
+                    color:color(sort-icon);
+                    cursor: pointer;
+                }
+                .desc-icon{
+                    position: relative;
+                    top: 12px;
+                    right: 24px;
+                }
+            }
+            tr{
+                text-align: left;
+            }
+        }
+        tbody{
+            tr{
+                cursor: pointer;
+                padding: 12px;
+                td{
+                    padding: 12px;
+                    // border-top: 1px solid #ffffff;
+                }
+            }
+            .child-list{
+               td{
+                background: color(table-row);
+                border-top: 1px solid #ddd;
+               }
+               .nested-icon{
+                    transform: translateX(-75px)
+               }
+               .nested-check{
+                position: relative;
+                right: 12%;
+                top: 6px;
+               }
+            }
+            .icon-color{
+                color: color(card-title);
+                cursor: pointer;
+            }
+            .expand-row{
+                position: relative;
+                left: 30%;
+                background: color(button-icon-color);
+                color: color(white);
+                border-radius: 50%;
+                height: 25px;
+                width: 25px;
+            }
+        }
+      }
+}
+.circle-icon{
+    position: relative;
+    top: 8px;
+    left: 8px;
+}
+.circle-1{
+    color:#ed5107
+}
+.circle-2{
+    color:#3e64ff;
+}
+.circle-3{
+    color:#7ecfc0;
+}
+.circle-4{
+    color:#ff935c;
+}
+.circle-5{
+    color:#207561;
+}

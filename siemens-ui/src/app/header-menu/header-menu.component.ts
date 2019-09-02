@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-menu.component.scss']
 })
 export class HeaderMenuComponent implements OnInit {
-
+  public activeMenu: string;
   constructor() { }
 
   ngOnInit() {
+    this.activeMenu = 'home'
   }
+
+  setMenu(manuItem){
+    this.activeMenu = manuItem;
+  }
+
 
 }

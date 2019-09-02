@@ -1,12 +1,7 @@
 @import '../ui-colors';
-.header-container{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-between;
-    padding: 24px 0px 0px 0px;
-    color: color(white);
 
    .header-app-title{
+    color: color(white);
        ul{
            list-style: none;
            padding: 0px;
@@ -53,5 +48,4 @@
             }
         }
     }
-}
 }

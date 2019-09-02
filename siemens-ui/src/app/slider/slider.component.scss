@@ -1,0 +1,205 @@
+@import '../ui-colors';
+.stack {
+    /* margin-top: 50vh; */
+    /* margin-left: 50vw; */
+    position: relative;
+    /* transform: translate(100%, -35%); */
+    width: 340px;
+    height: 340px;
+    top: 0px;
+    left: 33%;
+    right: 33%;
+}
+.card {
+	width: 400px;
+	height: 300px;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 12px;
+	position: absolute;
+  transform: translateY(0);
+  animation: onTop 12s 2s ease infinite;
+  box-shadow: 4px 4px 8px rgba(180,181,185,.5);
+  padding: 24px;
+}
+.ani {
+    animation: onTop 1s 0.3s;
+}
+.card.one-1 {
+	left: 0;
+	bottom: 0;
+	z-index: 2;
+	animation-name: onTop;
+}
+.card.one-2 {
+	left: 20px;
+	bottom: 20px;
+	z-index: 1;
+	animation-name: onMiddle;
+}
+.card.one-3 {
+	left: 40px;
+	bottom: 40px;
+	z-index: 0;
+	animation-name: onBottom;
+}
+.card.one-4 {
+	left: 40px;
+	bottom: 40px;
+	z-index: 0;
+	animation-name: onBottom;
+}
+
+@keyframes onTop {
+  5% {
+    transform: translateY(100px);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+  10% {
+    transform: translateY(0);
+    z-index: 0;
+    left: 40px;
+    bottom: 40px;
+  }
+  40% {
+    transform: translateY(0);
+    z-index: 0;
+    left: 40px;
+    bottom: 40px;
+  }
+  50% {
+    transform: translateY(0);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+  70% {
+    transform: translateY(0);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+  80% {
+    transform: translateY(0);
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+  }
+}
+@keyframes onMiddle {
+  10% {
+    transform: translateY(0);
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+  }
+  40% {
+    transform: translateY(0);
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+  }
+  45% {
+    transform: translateY(100px);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+  50% {
+    transform: translateY(0);
+    z-index: 0;
+    left: 40px;
+    bottom: 40px;
+  }
+  70% {
+    transform: translateY(0);
+    z-index: 0;
+    left: 40px;
+    bottom: 40px;
+  }
+  80% {
+    transform: translateY(0);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+}
+@keyframes onBottom {
+  10% {
+    transform: translateY(0);
+    z-index: 0;
+    left: 20px;
+    bottom: 20px;
+  }
+  40% {
+    transform: translateY(0);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+  50% {
+    transform: translateY(0);
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+  }
+  70% {
+    transform: translateY(0);
+    z-index: 2;
+    left: 0;
+    bottom: 0;
+  }
+  75% {
+    transform: translateY(100px);
+    z-index: 1;
+    left: 20px;
+    bottom: 20px;
+  }
+  80% {
+    transform: translateY(0);
+    z-index: 0;
+    left: 40px;
+    bottom: 40px;
+  }
+}
+
+.circle-img{
+  img{
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+  }
+}
+.card{
+  .profile-name{
+    font-size: 20px;
+  }
+  .last-time{
+    font-size: 12px;
+    color: color(card-title);
+  }
+  .card-description{
+    font-size: 14px;
+    padding: 40px 12px 40px 12px;
+    margin-top: 8px;
+
+    .text-paragraph{
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 40px;
+    }
+  }
+  .card-bottom{
+    color:color(card-title);
+    letter-spacing: 2px;
+    font-size: 20px;
+  }
+  .card-bottom-lable{
+    background: color(risk-button-bg);
+    color:color(risk-button-text);
+    border-radius: 18px;
+    padding: 6px 0px 6px 26px;
+    font-size: 12px;
+  }
+}

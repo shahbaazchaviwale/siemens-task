@@ -1,9 +1,9 @@
 <div class="header-menu">
     <ul>
-        <li class="active">Home</li>
-        <li>My Project</li>
-        <li>Revenue</li>
-        <li>Risk</li>
-        <li>Setting</li>
+        <li [class.active]="activeMenu === 'home'" (click)="setMenu('home')">Home</li>
+        <li [class.active]="activeMenu === 'my-project'" (click)="setMenu('my-project')">My Project</li>
+        <li [class.active]="activeMenu === 'revenue'" (click)="setMenu('revenue')">Revenue</li>
+        <li [class.active]="activeMenu === 'risk'" (click)="setMenu('risk')">Risk</li>
+        <li [class.active]="activeMenu === 'setting'" (click)="setMenu('setting')">Setting</li>
     </ul>
 </div>

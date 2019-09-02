@@ -1,10 +1,12 @@
 @import '../ui-colors';
 .header-menu{
     ul{
+        
         list-style-type: none;
         padding: 0px;
         color:color(white);
         li{
+            cursor: pointer;
             display: inline;
             padding: 8px 24px 8px 24px;
         }

@@ -1,0 +1,135 @@
+<!-- <table>
+    <thead>
+        <tr>
+            <th>ID 
+                    <button (click)="setOrder('_id', 'asc')">A</button>
+                    <button (click)="setOrder('_id', 'des')">D</button>
+            </th>
+            <th>Domain 
+                    <button (click)="setOrder('domain', 'asc')">A</button>
+                    <button (click)="setOrder('domain', 'des')">D</button>
+            </th>
+            <th>Sub-Domain
+                    <button (click)="setOrder('subdomain', 'asc')">A</button>
+                    <button (click)="setOrder('subdomain', 'des')">D</button>
+            </th>
+            <th>Location
+                    <button (click)="setOrder('location', 'asc')">A</button>
+                    <button (click)="setOrder('location', 'des')">D</button>
+            </th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let data of dataSource; let i = index">
+        <tr  (click)="getList(data._id, i)" #table>
+            <td>{{data._id}}</td>
+            <td>{{data.domain}}</td>
+            <td>{{data.subdomain}}</td>
+            <td>{{data.location}}</td> 
+        </tr>
+        <ng-container *ngIf="data._id === stateData">
+                <tr  style="color:red" *ngFor="let nested_data of data.nested;" >
+                        <td>
+                                <i class="material-icons">
+                                        subdirectory_arrow_right
+                                </i>
+                             {{nested_data._id}}
+                        </td>
+                        <td>{{nested_data.domain}}</td>
+                        <td>{{nested_data.subdomain}}</td>
+                        <td>{{nested_data.location}}</td> 
+                    </tr>
+        </ng-container>
+        
+       
+    </tbody>
+</table> -->
+
+<div class="table-container">
+        <div class="row">
+                <div class="col-lg-12 table-title">
+                        COMPONENT
+                </div>
+        </div>
+        <table class="table">
+                <thead>
+                        <tr>
+                                <th>
+                                        <i class="material-icons">crop_3_2</i>
+                                </th>
+
+                                <th>Domain
+                                        <i class="material-icons sort-icon" (click)="setOrder('domain', 'asc')">
+                                                arrow_drop_up
+                                        </i>
+                                        <i class="material-icons sort-icon desc-icon"
+                                                (click)="setOrder('domain', 'des')">
+                                                arrow_drop_down
+                                        </i>
+                                </th>
+                                <th>Sub-Domain
+                                        <i class="material-icons sort-icon" (click)="setOrder('subdomain', 'asc')">
+                                                arrow_drop_up
+                                        </i>
+                                        <i class="material-icons sort-icon desc-icon"
+                                                (click)="setOrder('subdomain', 'des')">
+                                                arrow_drop_down
+                                        </i>
+                                </th>
+                                <th>Location
+                                        <i class="material-icons sort-icon" (click)="setOrder('location', 'asc')">
+                                                arrow_drop_up
+                                        </i>
+                                        <i class="material-icons sort-icon desc-icon"
+                                                (click)="setOrder('location', 'des')">
+                                                arrow_drop_down
+                                        </i>
+                                </th>
+                                <th>ID
+                                        <i class="material-icons sort-icon" (click)="setOrder('_id', 'asc')">
+                                                arrow_drop_up
+                                        </i>
+                                        <i class="material-icons sort-icon desc-icon" (click)="setOrder('_id', 'des')">
+                                                arrow_drop_down
+                                        </i>
+                                </th>
+                        </tr>
+                </thead>
+                <tbody *ngFor="let data of dataSource; let i = index">
+                        <tr (click)="getList(data._id, i)" #table>
+                                <td>
+                                        <i class="material-icons icon-color">crop_3_2</i>
+                                        <i class="material-icons expand-row">keyboard_arrow_down</i>
+                                </td>
+
+                                <td>{{data.domain}}</td>
+                                <td>{{data.subdomain}}</td>
+                                <td>{{data.location}}</td>
+                                <td>{{data._id}}
+                                        <span class="padding-12">
+                                                <i class="material-icons circle-icon" ngClass="circle-{{i}}">lens</i>
+                                        </span>
+                                </td>
+                        </tr>
+                        <ng-container *ngIf="data._id === stateData">
+                                <tr class="child-list" *ngFor="let nested_data of data.nested; let j = index">
+                                        <td>
+                                                &nbsp;
+                                        </td>
+                                        <td>
+                                                <i class="material-icons nested-icon">subdirectory_arrow_right</i>
+                                                <i class="material-icons icon-color nested-check">crop_3_2</i>
+                                                <span>{{nested_data.domain}}</span>
+                                        </td>
+                                        <td>{{nested_data.subdomain}}</td>
+                                        <td>{{nested_data.location}}</td>
+                                        <td>{{nested_data._id}}
+                                                <span class="padding-12">
+                                                        <i class="material-icons circle-icon"
+                                                                ngClass="circle-{{j}}">lens</i>
+                                                </span>
+                                        </td>
+                                </tr>
+                        </ng-container>
+                </tbody>
+        </table>
+</div>

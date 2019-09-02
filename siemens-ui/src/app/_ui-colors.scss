@@ -8,7 +8,11 @@ $app-colour:(
     card-subtitle: #7f8790,
     card-subtitleNumber: #36CB89,
     risk-button-text: #D28E62,
-    risk-button-bg: #FAF2EF
+    risk-button-bg: #FAF2EF,
+    silver-btn-text: #AAB2BA,
+    silver-btn-bg: #F1F2F3,
+    table-row: #fbfbfb,
+    sort-icon:#7cd2d3
 );
 
 @function color($colour-name){

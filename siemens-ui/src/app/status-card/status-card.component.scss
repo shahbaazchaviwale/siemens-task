@@ -1,66 +1,36 @@
 @import '../ui-colors';
-.satus-card-container{
-    display: flex;
-    flex-direction: row;
-    position: relative;
-    top: 30px;
-    height: 280px;
 
-    .card-1{
-        width: 65%;
-        float: left;
-        background: color(white);
-        border-radius: 8px;
-        box-shadow: 2px 6px 5px -6px rgba(0,0,0,1);
-        padding: 24px;
-        .left-contianer-description{
-            width: 25%;
-            float: left;
-            
-            h5{
-                    margin: 0px 0px 12px 0px;
-                    color:color(card-title);
-                    letter-spacing: 2px;
-                    font-weight: 100;
-                    line-height: 16px;
-            }
-            h2{
-                margin: 16px 0px 6px 0px;
-                color:color(card-title);
-                letter-spacing: 2px;
-                font-weight: 500;
-                font-size: 28px;
-            }
-            div{
-                .count-number{
-                    color: color(card-subtitleNumber);
-                }
-                .count-description{
-                    color: color(card-subtitle);
-                }
-            }
-            .risk-tag{
-                margin: 50px 0px 0px 0px;
-                background: color(risk-button-bg);
-                color:color(risk-button-text);
-                border-radius: 18px;
-                padding: 6px 12px 6px 12px;
-                font-size: 15px;
-            }
-        }
-        .right-contianer-chart{
-            width: 75%;
-            height: 150px;
-            float: left;
-            
-        }
+.left-box-container{
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start
+
+}
+
+
+.title-description{
+    margin: 16px 0px 6px 0px;
+    color:color(card-title);
+    letter-spacing: 2px;
+    font-weight: 500;
+    font-size: 28px;
+}
+.sub-title{
+    .count-number{
+        color: color(card-subtitleNumber);
     }
-    .card-2{
-        width: 33%;
-        float: left;
-        margin-left: 2%;
-        background: color(white);
-        border-radius: 8px;
-        box-shadow: 2px 6px 5px -6px rgba(0,0,0,1);
+    .count-description{
+        color: color(card-subtitle);
     }
+}
+.bottom-lable{
+    // position: absolute;
+    // bottom:24px;
+    // margin: 50px 0px 0px 0px;
+    background: color(risk-button-bg);
+    color:color(risk-button-text);
+    border-radius: 18px;
+    padding: 6px 12px 6px 12px;
+    font-size: 15px;
+    margin-top: 35px;
 }

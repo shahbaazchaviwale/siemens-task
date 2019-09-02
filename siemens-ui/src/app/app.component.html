@@ -1,12 +1,59 @@
-<div class="container">
-        <div class="center">
-                        <app-header-section></app-header-section>
-                        <app-header-menu></app-header-menu>
-                        <app-status-card></app-status-card>
+<div class="main-container">
+    <div class="container">
+        <!-- header section -->
+        <div class="row ">
+            <div class="title-section">
+                <div class="col-lg-2 padding-left">
+                    <app-app-title-section></app-app-title-section>
+                </div>
+                <div class="col-lg-2 pull-right">
+                    <app-app-notification-section></app-app-notification-section>
+                </div>
+            </div>
+            <div class="col-lg-12 top-24 padding-0">
+                <app-header-menu></app-header-menu>
+            </div>
         </div>
-    <div class="layer-1">layer-1</div>
-    <div class="layer-2">layer-2</div>
-    <div class="layer-3">layer-3</div>
-    <div class="layer-4">layer-4</div>
-   
+        <!-- card section -->
+        <div class="row top-24 ">
+            <div class="left-card shadow-box padding-12">
+                <div class="left-status">
+                    <app-left-status-card></app-left-status-card>
+                </div>
+                <div class="right-status">
+                    <app-high-chart></app-high-chart>
+                </div>
+            </div>
+            <div class="right-card shadow-box padding-12">
+                <app-right-status-card></app-right-status-card>
+            </div>
+        </div>
+        <!-- button section -->
+        <div class="row top-24 ">
+            <div class="col-lg-4 padding-0"><h4 class="dark-grey">Suggested Projects</h4></div>
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4 padding-0 title text-right">
+                VIEW ALLPROJECTS 
+                <i class="material-icons align-icon">
+                    arrow_forward
+                </i>
+            </div>
+        </div>
+
+        <div class="row margin-top-40">
+            <div class="col-lg-12">
+                    <app-slider></app-slider>
+            </div>
+        </div>
+
+        <div class="row top-24 ">
+            <div class="col-lg-12 padding-0">
+                    <app-table-list></app-table-list>
+            </div>
+        </div>
+    </div>
+
 </div>
+<div class="layer-1"></div>
+<div class="layer-2"></div>
+<div class="layer-3"></div>
