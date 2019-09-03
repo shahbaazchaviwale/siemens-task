@@ -16,11 +16,11 @@ export class TableListComponent implements OnInit {
 
   constructor(private tableService: TableListService) { }
   ngOnInit() {
-    this.tableService.getTableList().subscribe( tableData  => {
+    this.tableService.getTableList().subscribe(tableData => {
       this.tableListData = tableData;
-      this.dataSource = this.tableListData ;
+      this.dataSource = this.tableListData;
     });
-   
+
   }
   setOrder(value: any, state: string) {
     this.tableListData.sort(
@@ -28,18 +28,18 @@ export class TableListComponent implements OnInit {
         let valueA = a[value];
         let valueB = b[value];
 
-         if(state === 'asc'){
-          if(valueA > valueB){
+        if (state === 'asc') {
+          if (valueA > valueB) {
             return 1;
-          } else if(valueA < valueB) {
+          } else if (valueA < valueB) {
             return -1;
           }
           return 0;
-         } 
-        if(state === 'des'){
-          if(valueA < valueB){
+        }
+        if (state === 'des') {
+          if (valueA < valueB) {
             return 1;
-          } else if(valueA > valueB) {
+          } else if (valueA > valueB) {
             return -1;
           }
           return 0;
@@ -49,8 +49,8 @@ export class TableListComponent implements OnInit {
     this.dataSource = JSON.parse(JSON.stringify(this.tableListData));
   }
 
-  getList(list, index){
-   this.stateData = list;
+  getList(list, index) {
+    this.stateData = list;
   }
 
 

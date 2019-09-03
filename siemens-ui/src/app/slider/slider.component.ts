@@ -9,8 +9,9 @@ export class SliderComponent implements OnInit {
 
 
   public NextPassNumber = 2;
-  public PrePassNumber = 1;
   public nextNumber = 1;
+
+  public PrePassNumber = 1;
   public NextbtnDisable = true;
   public PrebtnDisable = false;
   public data = [
@@ -67,5 +68,24 @@ export class SliderComponent implements OnInit {
   //   this.nextNumber = 1;
   // }
 
+  next() {
+    this.nextNumber = 1;
+    if (this.NextPassNumber === this.data.length + 1) {
+      this.NextPassNumber = 2;
+    }
+    const  arrShift = this.data.shift();
+    this.data.push(arrShift);
 
+    this.data.map( (value) => {
+    if (value.id === this.NextPassNumber ) {
+      value.class = 'one-' + this.nextNumber + ' ani';
+    } else {
+      value.class = 'one-' + this.nextNumber;
+    }
+    // value.base = 'active'
+    this.nextNumber++;
+  });
+    this.NextPassNumber++;
+    console.log(' data >>', this.data);
+  }
 }
