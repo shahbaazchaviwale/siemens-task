@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SliderService } from './slider.service';
 
 @Component({
   selector: 'app-slider',
@@ -14,78 +15,50 @@ export class SliderComponent implements OnInit {
   public PrePassNumber = 1;
   public NextbtnDisable = true;
   public PrebtnDisable = false;
-  public data = [
-    { id: 1, name: 'Alita Oliva', lastseen: '5', class: 'one-1' },
-    { id: 2, name: 'Evliyn Salt', lastseen: '6', class: 'one-2' },
-    { id: 3, name: 'Maria Dsaouza', lastseen: '3', class: 'one-3' },
-  ];
+  // public data = [
+  //   { id: 1, name: 'Alita Oliva', lastseen: '5', class: 'one-1' },
+  //   { id: 2, name: 'Evliyn Salt', lastseen: '6', class: 'one-2' },
+  //   { id: 3, name: 'Maria Dsaouza', lastseen: '3', class: 'one-3' },
+  // ];
 
-  constructor() { }
+  public photosList;
+  constructor(private photoService: SliderService) { }
 
   ngOnInit() {
-  }
-
-  previous() {
-    if (this.PrePassNumber >= this.data.length) {
-      // this.passNumber = 1
-      this.NextbtnDisable = false;
-    }
-    this.data.map((value, index) => {
-      if (index <= this.data.length - 1) {
-        if (value.id === this.PrePassNumber) {
-          value.class = 'one-1 ani';
-          console.log('data >>');
-        } else {
-          index <= this.data.length - 2 ? value.class = 'one-' + (this.nextNumber + 1) : value.class = 'one-' + index + 1;
-        }
-      }
-      this.nextNumber--;
+    this.photoService.getPhotos().subscribe(photoList => {
+      this.photosList = this.edit(photoList);
     });
-    this.PrePassNumber--;
-    this.nextNumber = 1;
   }
+  edit(data){
+    let list = data.filter( f => f.id <= 3);
+    list.map( (element, i) => {
+      element.name = "Monti-"+i;
+      element.lastseen = i + 3;
+      element.class = "one-" + (i + 1);
+    });
+    return list;
+  }
+ 
+
 
   // next() {
-
-  //   if (this.NextPassNumber >= this.data.length) {
-  //     // this.passNumber = 1
-  //     this.NextbtnDisable = false;
-  //   }
-  //   this.NextbtnDisable = true;
-  //   this.data.map((value, index) => {
-  //     if (index <= this.data.length - 1) {
-  //       if (value.id === this.NextPassNumber) {
-  //         value.class = 'one-1 ani'
-  //         console.log('data >>');
-  //       } else {
-  //         index <= this.data.length - 2 ? value.class = 'one-' + (this.nextNumber + 1) : value.class = 'one-' + value.id;
-  //       }
-  //     }
-  //     this.nextNumber++;
-  //   });
-  //   console.log('list >>', this.data);
-  //   this.NextPassNumber++;
   //   this.nextNumber = 1;
+  //   if (this.NextPassNumber === this.data.length + 1) {
+  //     this.NextPassNumber = 2;
+  //   }
+  //   const  arrShift = this.data.shift();
+  //   this.data.push(arrShift);
+
+  //   this.data.map( (value) => {
+  //   if (value.id === this.NextPassNumber ) {
+  //     value.class = 'one-' + this.nextNumber + ' ani';
+  //   } else {
+  //     value.class = 'one-' + this.nextNumber;
+  //   }
+  //   // value.base = 'active'
+  //   this.nextNumber++;
+  // });
+  //   this.NextPassNumber++;
+  //   console.log(' data >>', this.data);
   // }
-
-  next() {
-    this.nextNumber = 1;
-    if (this.NextPassNumber === this.data.length + 1) {
-      this.NextPassNumber = 2;
-    }
-    const  arrShift = this.data.shift();
-    this.data.push(arrShift);
-
-    this.data.map( (value) => {
-    if (value.id === this.NextPassNumber ) {
-      value.class = 'one-' + this.nextNumber + ' ani';
-    } else {
-      value.class = 'one-' + this.nextNumber;
-    }
-    // value.base = 'active'
-    this.nextNumber++;
-  });
-    this.NextPassNumber++;
-    console.log(' data >>', this.data);
-  }
 }

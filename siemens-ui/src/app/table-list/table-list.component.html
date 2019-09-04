@@ -1,48 +1,3 @@
-<!-- <table>
-    <thead>
-        <tr>
-            <th>ID 
-                    <button (click)="setOrder('_id', 'asc')">A</button>
-                    <button (click)="setOrder('_id', 'des')">D</button>
-            </th>
-            <th>Domain 
-                    <button (click)="setOrder('domain', 'asc')">A</button>
-                    <button (click)="setOrder('domain', 'des')">D</button>
-            </th>
-            <th>Sub-Domain
-                    <button (click)="setOrder('subdomain', 'asc')">A</button>
-                    <button (click)="setOrder('subdomain', 'des')">D</button>
-            </th>
-            <th>Location
-                    <button (click)="setOrder('location', 'asc')">A</button>
-                    <button (click)="setOrder('location', 'des')">D</button>
-            </th>
-        </tr>
-    </thead>
-    <tbody *ngFor="let data of dataSource; let i = index">
-        <tr  (click)="getList(data._id, i)" #table>
-            <td>{{data._id}}</td>
-            <td>{{data.domain}}</td>
-            <td>{{data.subdomain}}</td>
-            <td>{{data.location}}</td> 
-        </tr>
-        <ng-container *ngIf="data._id === stateData">
-                <tr  style="color:red" *ngFor="let nested_data of data.nested;" >
-                        <td>
-                                <i class="material-icons">
-                                        subdirectory_arrow_right
-                                </i>
-                             {{nested_data._id}}
-                        </td>
-                        <td>{{nested_data.domain}}</td>
-                        <td>{{nested_data.subdomain}}</td>
-                        <td>{{nested_data.location}}</td> 
-                    </tr>
-        </ng-container>
-        
-       
-    </tbody>
-</table> -->
 
 <div class="table-container">
         <div class="row">
@@ -58,11 +13,11 @@
                                 </th>
 
                                 <th>Domain
-                                        <i class="material-icons sort-icon" (click)="setOrder('domain', 'asc')">
+                                        <i class="material-icons sort-icon" (click)="setOrder('part_id', 'asc')">
                                                 arrow_drop_up
                                         </i>
                                         <i class="material-icons sort-icon desc-icon"
-                                                (click)="setOrder('domain', 'des')">
+                                                (click)="setOrder('part_id', 'des')">
                                                 arrow_drop_down
                                         </i>
                                 </th>
@@ -101,7 +56,7 @@
                                         <i class="material-icons expand-row">keyboard_arrow_down</i>
                                 </td>
 
-                                <td>{{data.domain}}</td>
+                                <td>{{data.part_id}}</td>
                                 <td>{{data.subdomain}}</td>
                                 <td>{{data.location}}</td>
                                 <td>{{data._id}}
@@ -118,7 +73,7 @@
                                         <td>
                                                 <i class="material-icons nested-icon">subdirectory_arrow_right</i>
                                                 <i class="material-icons icon-color nested-check">crop_3_2</i>
-                                                <span>{{nested_data.domain}}</span>
+                                                <span>{{nested_data.part_id}}</span>
                                         </td>
                                         <td>{{nested_data.subdomain}}</td>
                                         <td>{{nested_data.location}}</td>
